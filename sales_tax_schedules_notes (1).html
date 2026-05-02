@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Tax Act 1990 – Study Notes (3rd, 6th, 8th, 11th, 12th Schedules)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --amber: #C8690A; --amber-light: #FEF3E2; --amber-mid: #F5C274;
+    --green: #1A6B3A; --green-light: #EAF5EE; --green-mid: #86CFA0;
+    --purple: #4A3DB5; --purple-light: #F0EEFF; --purple-mid: #B8B0F0;
+    --pink: #8B2D5C; --pink-light: #FDE8F3; --pink-mid: #EFA8D0;
+    --slate: #2B3A4A; --slate-light: #EEF2F6; --slate-mid: #9DB5CA;
+    --ink: #1A1A2E; --paper: #FAFAF7; --rule: #E2DED7;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+
+  /* COVER */
+  .cover {
+    border: 2px solid var(--ink);
+    padding: 28px 32px 24px;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .cover-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .cover-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .sch-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 2px;
+    border: 1.5px solid;
+  }
+
+  /* SCHEDULE SECTION */
+  .schedule {
+    margin-bottom: 44px;
+    border-left: 4px solid;
+    padding-left: 20px;
+  }
+  .sch-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .sch-number {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .sch-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .sch-hook {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 14px;
+  }
+  .law-ref {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: #f0f0ee;
+    border: 1px solid #ddd;
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #444;
+  }
+
+  /* KEY RULE BOX */
+  .key-rule {
+    border: 1.5px solid;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .key-rule strong { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; margin-bottom: 3px; }
+
+  /* ITEMS TABLE */
+  .items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  .items-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--ink);
+  }
+  .items-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .items-table tr:hover td { background: #f5f5f2; }
+  .item-name { font-weight: 500; }
+  .item-synonym { font-size: 11px; color: #666; margin-top: 2px; font-style: italic; }
+  .rate-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .condition-note { font-size: 11px; color: #555; }
+  .exam-flag {
+    display: inline-block;
+    background: #FFF3CD;
+    border: 1px solid #F0C040;
+    font-size: 10px;
+    font-family: var(--mono);
+    padding: 1px 6px;
+    border-radius: 2px;
+    color: #7A5C00;
+    margin-left: 4px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+
+  /* TRICKY POINTS */
+  .tricky {
+    background: #FFFBF0;
+    border: 1px solid #F0C040;
+    border-left: 3px solid #D4A000;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 12.5px;
+    border-radius: 0 4px 4px 0;
+  }
+  .tricky strong { color: #7A5C00; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; display: block; margin-bottom: 3px; }
+
+  /* IMAGE GRID */
+  .img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .img-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+  }
+  .img-card img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+  }
+  .img-card span {
+    display: block;
+    font-size: 10px;
+    padding: 3px 4px;
+    color: #555;
+    font-family: var(--mono);
+  }
+
+  /* COLOUR THEMES */
+  .s3  { border-color: var(--amber); }
+  .s3 .sch-number { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-mid); }
+  .s3 .sch-title  { color: var(--amber); }
+  .s3 .key-rule   { border-color: var(--amber-mid); background: var(--amber-light); }
+  .s3 .key-rule strong { color: var(--amber); }
+  .s3 .items-table th { color: var(--amber); }
+  .s3 .rate-pill  { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-mid); }
+
+  .s6  { border-color: var(--green); }
+  .s6 .sch-number { background: var(--green-light); color: var(--green); border: 1px solid var(--green-mid); }
+  .s6 .sch-title  { color: var(--green); }
+  .s6 .key-rule   { border-color: var(--green-mid); background: var(--green-light); }
+  .s6 .key-rule strong { color: var(--green); }
+  .s6 .items-table th { color: var(--green); }
+  .s6 .rate-pill  { background: var(--green-light); color: var(--green); border: 1px solid var(--green-mid); }
+
+  .s8  { border-color: var(--purple); }
+  .s8 .sch-number { background: var(--purple-light); color: var(--purple); border: 1px solid var(--purple-mid); }
+  .s8 .sch-title  { color: var(--purple); }
+  .s8 .key-rule   { border-color: var(--purple-mid); background: var(--purple-light); }
+  .s8 .key-rule strong { color: var(--purple); }
+  .s8 .items-table th { color: var(--purple); }
+  .s8 .rate-pill  { background: var(--purple-light); color: var(--purple); border: 1px solid var(--purple-mid); }
+
+  .s11 { border-color: var(--pink); }
+  .s11 .sch-number { background: var(--pink-light); color: var(--pink); border: 1px solid var(--pink-mid); }
+  .s11 .sch-title  { color: var(--pink); }
+  .s11 .key-rule   { border-color: var(--pink-mid); background: var(--pink-light); }
+  .s11 .key-rule strong { color: var(--pink); }
+  .s11 .items-table th { color: var(--pink); }
+  .s11 .rate-pill  { background: var(--pink-light); color: var(--pink); border: 1px solid var(--pink-mid); }
+
+  .s12 { border-color: var(--slate); }
+  .s12 .sch-number { background: var(--slate-light); color: var(--slate); border: 1px solid var(--slate-mid); }
+  .s12 .sch-title  { color: var(--slate); }
+  .s12 .key-rule   { border-color: var(--slate-mid); background: var(--slate-light); }
+  .s12 .key-rule strong { color: var(--slate); }
+  .s12 .items-table th { color: var(--slate); }
+  .s12 .rate-pill  { background: var(--slate-light); color: var(--slate); border: 1px solid var(--slate-mid); }
+
+  hr.divider { border: none; border-top: 1.5px solid var(--rule); margin: 32px 0; }
+
+  .past-paper-box {
+    background: #F5F0FF;
+    border: 1px solid #C5B8F5;
+    border-left: 3px solid var(--purple);
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 12.5px;
+    border-radius: 0 4px 4px 0;
+  }
+  .past-paper-box strong { color: var(--purple); font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+
+  @media print {
+    body { padding: 16px; }
+    .schedule { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-tag">CFAP-5 · Tax Planning &amp; Practices · Sales Tax Act 1990</div>
+  <h1>Schedule Study Notes<br>Summarised &amp; Exam-Ready</h1>
+  <div style="font-size:13px; color:#555; margin-top:6px;">Updated to 2025-26 · All active items · Past paper examples integrated</div>
+  <div class="cover-badges">
+    <span class="sch-badge" style="color:var(--amber);border-color:var(--amber);">3rd — MRP Tax</span>
+    <span class="sch-badge" style="color:var(--green);border-color:var(--green);">6th — Exempt</span>
+    <span class="sch-badge" style="color:var(--purple);border-color:var(--purple);">8th — Reduced Rate</span>
+    <span class="sch-badge" style="color:var(--pink);border-color:var(--pink);">11th — Withholding</span>
+    <span class="sch-badge" style="color:var(--slate);border-color:var(--slate);">12th — 3% Import VAT</span>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- 3RD SCHEDULE -->
+<!-- ============================================================ -->
+<div class="schedule s3">
+  <div class="sch-header">
+    <span class="sch-number">3RD SCHEDULE</span>
+    <span class="sch-title">Tax on Retail Price (MRP)</span>
+  </div>
+  <div class="sch-hook">"Tax is on the price printed on the packet — not on what the seller charges"</div>
+  <div class="law-ref">Section 3(2)(a) · Definition of "retail price" in Section 2(27)</div>
+
+  <div class="key-rule">
+    <strong>The Rule</strong>
+    Goods in this schedule are taxed at <strong>18% of the retail price</strong> printed on the pack. The manufacturer (or importer for imported goods) must print the MRP prominently on each packet. Retail price = price fixed by manufacturer inclusive of all duties/charges except income tax & sales tax itself. For imported goods: MRP must not be less than <strong>130% of customs value</strong>.
+  </div>
+
+  <div class="tricky">
+    <strong>EXAM TRAP</strong>
+    If a 3rd Schedule good is ALSO in the 8th Schedule, the <strong>8th Schedule rate applies to the retail price</strong> (not 18%). The base is always retail price; only the rate changes.
+  </div>
+
+  <div class="tricky">
+    <strong>EXAM TRAP — Chilling deduction</strong>
+    For aerated water, beverages, mineral water, and fruit juices: reduction for chilling charges cannot exceed <strong>5% of the retail price</strong>.
+  </div>
+
+  <div class="section-label">Items — Group A: Food &amp; Beverages</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=200&q=80" alt="fruit juice"><span>Fruit Juice</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80" alt="ice cream"><span>Ice Cream</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1625772452859-1c03d884dcd7?w=200&q=80" alt="aerated water"><span>Aerated Water</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&q=80" alt="tea"><span>Tea</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&q=80" alt="mineral water"><span>Mineral Water</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1534483509719-3feaee7c30da?w=200&q=80" alt="biscuits"><span>Biscuits</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Also known as / Notes</th><th>Rate</th></tr>
+    <tr><td><span class="item-name">Fruit juices &amp; vegetable juices</span><div class="item-synonym">Mango juice, orange juice, apple juice, mixed fruit juice, carrot juice</div></td><td>In retail packing</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Ice cream</span><div class="item-synonym">Kulfi, frozen dessert, ice lollies</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Aerated waters or beverages</span><div class="item-synonym">Carbonated drinks, cola, soda water, sparkling water, fizzy drinks (e.g. Pepsi, Coca-Cola, 7Up, Sprite)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Syrups and squashes</span><div class="item-synonym">Rooh Afza, fruit squash, cordial, flavoured syrups</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Tea</span><div class="item-synonym">Green tea, black tea, teabags, loose-leaf tea (Tapal, Lipton, Supreme)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Powder drinks</span><div class="item-synonym">Tang, Nesquik, powdered energy drinks, flavoured milk powder mixes</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Milky drinks</span><div class="item-synonym">Flavoured milk, UHT milk blends, Nestlé Milo ready-to-drink, packaged lassi</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Biscuits in retail packing with brand name</span><div class="item-synonym">Cookies, crackers, wafers (Peek Freans, EBM, LU)</div></td><td>Must be branded</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+  </table>
+
+  <div class="section-label">Items — Group B: Personal Care &amp; Household</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&q=80" alt="soap"><span>Toilet Soap</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=200&q=80" alt="shampoo"><span>Shampoo</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=200&q=80" alt="toothpaste"><span>Toothpaste</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=200&q=80" alt="perfume"><span>Perfumery</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1589803204716-e34c9f4e9e72?w=200&q=80" alt="tissue paper"><span>Tissue Paper</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?w=200&q=80" alt="shoe polish"><span>Shoe Polish</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Also known as / Notes</th><th>Rate</th></tr>
+    <tr><td><span class="item-name">Toilet soap</span><div class="item-synonym">Bath soap, bar soap, hand wash, body wash (Lux, Lifebuoy, Safeguard, Dove)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Detergents</span><div class="item-synonym">Washing powder, laundry detergent, dish soap (Surf Excel, Ariel, Bonus, Vim)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Shampoo</span><div class="item-synonym">Hair wash, conditioning shampoo, anti-dandruff shampoo (Head &amp; Shoulders, Sunsilk)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Toothpaste</span><div class="item-synonym">Dental cream, tooth gel, whitening paste (Colgate, Aquafresh, Close-Up)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Shaving cream</span><div class="item-synonym">Shaving gel, shaving foam (Gillette, Old Spice)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Perfumery and cosmetics</span><div class="item-synonym">Perfume, cologne, attar, lipstick, foundation, mascara, nail polish, face cream, moisturiser, blush, eye shadow</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Toilet paper and tissue paper</span><div class="item-synonym">Bathroom tissue, facial tissues, kitchen towels, napkins (Softa, Rose Petal)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Shoe polish and shoe cream</span><div class="item-synonym">Boot polish, leather polish (Cherry Blossom, Kiwi)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Spices sold in retail packing with brand names &amp; trademarks</span><div class="item-synonym">Branded pepper, coriander, cumin, cloves, cardamom (National, Shan — branded packs only)</div></td><td>Only BRANDED — unbranded spices are EXEMPT (6th Sch)</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+  </table>
+
+  <div class="section-label">Items — Group C: Electrical &amp; Gas Appliances, Vehicles, Misc</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=200&q=80" alt="AC"><span>Air Conditioner</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80" alt="motorcycle"><span>Motorcycle</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=200&q=80" alt="tiles"><span>Tiles</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=200&q=80" alt="paint"><span>Paints</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d6e?w=200&q=80" alt="batteries"><span>Storage Batteries</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1600590454449-ca60bdf8e5f7?w=200&q=80" alt="cement"><span>Cement</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Also known as / Notes</th><th>Rate</th></tr>
+    <tr><td><span class="item-name">Household electrical goods</span><div class="item-synonym">Air conditioner, refrigerator, deep freezer, TV, recorders &amp; players, electric bulb, tube-light, electric fan, electric iron, washing machine, telephone sets</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Household gas appliances</span><div class="item-synonym">Cooking range, oven, geyser, gas heater</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Foam or spring mattresses &amp; other foam products</span><div class="item-synonym">Foam mattress, spring mattress, sofa foam, foam pillow (for household use)</div></td><td>Household use only</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Paints, distempers, enamels, pigments, colours, varnishes, gums, resins, dyes, glazes, thinners, blacks, cellulose lacquers and polishes</span><div class="item-synonym">Wall paint, enamel paint, wood varnish, lacquer (Berger, ICI Dulux, Nippon) — sold in retail packing</div></td><td>Retail packing only</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Lubricating oils, brake fluids, transmission fluid and other vehicular fluids</span><div class="item-synonym">Engine oil, gear oil, hydraulic fluid, coolant, ATF (Total, Castrol, Shell Helix) — in retail packing</div></td><td>Retail packing only</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Storage batteries</span><div class="item-synonym">Lead-acid battery, dry cell, car battery, UPS battery — excluding those sold to automotive manufacturers</div></td><td>NOT sold to auto makers/assemblers</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Tyres and tubes</span><div class="item-synonym">Car tyre, motorcycle tyre, bicycle tyre, inner tube — excluding those sold to auto manufacturers</div></td><td>NOT sold to auto makers/assemblers</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Motorcycles</span><div class="item-synonym">Motor bike, scooter, moped (Honda, Yamaha, Suzuki, Ravi)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Auto rickshaws</span><div class="item-synonym">Three-wheelers, Tuk-tuk, Qingqi (passenger auto)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Tiles</span><div class="item-synonym">Floor tiles, wall tiles, ceramic tiles, vitrified tiles (Master Tiles, Shabbir Tiles)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Auto-parts in retail packing</span><div class="item-synonym">Spare parts, filters, brake pads — excluding those sold to automotive manufacturers</div></td><td>Retail packing; NOT to auto makers</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Cement sold in retail packing</span><div class="item-synonym">Bagged cement, cement sack (DG Khan, Lucky, Bestway, Maple Leaf, Fauji)</div></td><td>Retail packing only</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Mineral / bottled water</span><div class="item-synonym">Packaged drinking water, spring water (Nestlé Pure Life, Aquafina, Sufi)</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">DAP (Di-Ammonium Phosphate)</span><div class="item-synonym">Diammonium phosphate fertilizer — this is a recent addition</div></td><td></td><td><span class="rate-pill">18% on MRP</span></td></tr>
+    <tr><td><span class="item-name">Pet food (imported), coffee (imported), chocolates (imported), cereal bars (imported)</span><div class="item-synonym">Dog food, cat food, instant coffee, chocolate bars — all imported, retail packing</div></td><td>Imported goods; retail packing</td><td><span class="rate-pill">18% on MRP</span></td></tr>
+  </table>
+
+  <div class="past-paper-box">
+    <strong>PAST PAPER — Winter 2024 (Q6 HPL)</strong>
+    2000 non-medicated face &amp; skin creams in retail packing — retail price Rs.5,000/tube — these are 3rd Schedule goods taxed at 18% × Rs.5,000 = Rs.900/tube (output tax). For purchases of same from unregistered persons: further tax of 3% also applies. Insulin cartridges in retail packaging at Rs.500 each → 3rd Schedule, but drugs registered under Drugs Act 1976 are covered by the 8th Schedule at 1%, so insulin falls under the 8th Schedule.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- 6TH SCHEDULE -->
+<!-- ============================================================ -->
+<div class="schedule s6">
+  <div class="sch-header">
+    <span class="sch-number">6TH SCHEDULE</span>
+    <span class="sch-title">Full Exemption (No Tax)</span>
+  </div>
+  <div class="sch-hook">"No tax at all — but also no input tax credit"</div>
+  <div class="law-ref">Section 13(1) · Three Tables: Table-1 (Imports/Supplies), Table-2 (Special cases), Table-3 (Machinery)</div>
+
+  <div class="key-rule">
+    <strong>The Rule</strong>
+    Goods listed here are completely exempt from sales tax. Unlike zero-rating (5th Schedule), the supplier of exempt goods CANNOT claim input tax credit on purchases used to make those exempt supplies. Federal Government can grant emergency exemptions under Section 13(2) by notification.
+  </div>
+
+  <div class="tricky">
+    <strong>EXAM TRAP — Branded vs Unbranded</strong>
+    Spices (red chillies, ginger, turmeric), if sold <strong>under a brand name or trademark</strong>, lose their exemption and fall into the <strong>3rd Schedule</strong> (MRP basis). Without a brand = 6th Schedule (exempt). This is a favourite past-paper distinction.
+  </div>
+
+  <div class="tricky">
+    <strong>EXAM TRAP — PATA Region</strong>
+    Goods purchased from suppliers in PATA are generally outside the sales tax net. In past papers, ginger bought in <em>bulk</em> from a PATA wholesaler is treated as unbranded/exempt (6th Schedule), while the same ginger under a brand name is taxable.
+  </div>
+
+  <div class="section-label">Table-1: Exempt Goods (Imports or Supplies)</div>
+
+  <div class="section-label">— Food Staples</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&q=80" alt="pulses"><span>Pulses (Dal)</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&q=80" alt="rice wheat"><span>Rice &amp; Wheat</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=200&q=80" alt="red chilli"><span>Red Chillies</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=200&q=80" alt="ginger"><span>Ginger</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1615485291084-a7abb4736c35?w=200&q=80" alt="turmeric"><span>Turmeric</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition / Note</th></tr>
+    <tr><td><span class="item-name">Pulses</span><div class="item-synonym">Dal mash, dal chana, dal masoor, dal moong, lentils, chickpeas, kidney beans (rajma), black-eyed peas</div></td><td>All types of pulses</td></tr>
+    <tr><td><span class="item-name">Red chillies</span><div class="item-synonym">Lal mirch (dry), cayenne, paprika</div></td><td>Excluding those sold under brand names/trademarks <span class="exam-flag">EXAM</span></td></tr>
+    <tr><td><span class="item-name">Ginger</span><div class="item-synonym">Adrak (dry ginger), ginger root</div></td><td>Excluding branded <span class="exam-flag">EXAM</span></td></tr>
+    <tr><td><span class="item-name">Turmeric</span><div class="item-synonym">Haldi, curcumin powder</div></td><td>Excluding branded <span class="exam-flag">EXAM</span></td></tr>
+    <tr><td><span class="item-name">Rice, wheat, wheat flour and meslin flour</span><div class="item-synonym">Basmati rice, long grain rice, chakki atta, maida (all-purpose flour)</div></td><td></td></tr>
+  </table>
+
+  <div class="section-label">— Religious, Educational &amp; Financial Instruments</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=200&q=80" alt="quran"><span>Holy Quran</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=200&q=80" alt="books"><span>Books</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=200&q=80" alt="stocks bonds"><span>Stocks &amp; Bonds</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=200&q=80" alt="gold"><span>Monetary Gold</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=200&q=80" alt="exercise book"><span>Exercise Books</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition / Note</th></tr>
+    <tr><td><span class="item-name">Holy Quran</span><div class="item-synonym">Complete or in parts, with or without translation; Quranic verses on audio/digital media; other holy books (Bible, Torah, Gita)</div></td><td></td></tr>
+    <tr><td><span class="item-name">Newsprint and books</span><div class="item-synonym">Newspapers, novels, textbooks, reference books, printed books</div></td><td>Excluding brochures, leaflets, directories <span class="exam-flag">EXAM</span></td></tr>
+    <tr><td><span class="item-name">Exercise books</span><div class="item-synonym">School exercise books, writing notebooks, copybooks</div></td><td></td></tr>
+    <tr><td><span class="item-name">Currency notes, bank notes, shares, stocks and bonds</span><div class="item-synonym">Paper money, share certificates, debentures, government securities, T-bills</div></td><td>Financial instruments</td></tr>
+    <tr><td><span class="item-name">Monetary gold</span><div class="item-synonym">Gold in coin form used as currency; gold bars for monetary purposes</div></td><td></td></tr>
+    <tr><td><span class="item-name">Wheelchairs</span><div class="item-synonym">Manual wheelchairs, electric wheelchairs, mobility chairs</div></td><td>All types</td></tr>
+  </table>
+
+  <div class="section-label">— Medical Equipment &amp; Devices</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=200&q=80" alt="dialysis"><span>Dialysis Machine</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=200&q=80" alt="hearing aid"><span>Hearing Aid</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=200&q=80" alt="prosthesis"><span>Artificial Limbs</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1631563019676-dade0dbdb8fc?w=200&q=80" alt="stent"><span>Stents</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition / Note</th></tr>
+    <tr><td><span class="item-name">Dextrose and saline infusion giving sets; empty non-toxic bags for infusion; artificial parts of the body; intra-ocular lenses; glucose testing equipment</span><div class="item-synonym">IV drip bags, IV sets, prosthetic limbs, artificial joints, eye lens implants, glucometer strips</div></td><td></td></tr>
+    <tr><td><span class="item-name">Artificial kidneys, eye cornea, hemodialysis machines, hemodialyzers, A.V. fistula needles, hemodialysis fluids &amp; powder, blood tubing lines for dialysis, reverse osmosis plants for dialysis, double lumen catheter, peritoneal dialysis solution, cochlear implants, angioplasty equipment (balloons, catheters, wires, stents)</span><div class="item-synonym">Kidney dialysis machines, dialyzers, AV fistula, cochlear hearing implants, heart stents, angioplasty balloons</div></td><td></td></tr>
+    <tr><td><span class="item-name">Hearing aids (all types) &amp; hearing assessment equipment (audiometers, tympanometers, ABR, Oto Acoustic)</span><div class="item-synonym">BTE hearing aids, ITE hearing aids, digital hearing aids</div></td><td></td></tr>
+    <tr><td><span class="item-name">Blood bags CPDA-1 with blood transfusion set</span><div class="item-synonym">Blood collection bags, transfusion sets packed in aluminium foil</div></td><td></td></tr>
+    <tr><td><span class="item-name">Urine drainage bags</span><div class="item-synonym">Catheter bags, urology drainage bags, Foley catheter bags</div></td><td></td></tr>
+    <tr><td><span class="item-name">Cardiac equipment (echocardiography, angiography, ETT, LVAD, valve systems, aortic stent grafts, cerebral stents, embolization coils, peripheral intervention equipment)</span><div class="item-synonym">Heart stents, cardiac monitors, pacemaker accessories, cardiac catheters, MRI-compatible cardiac devices</div></td><td>Extensive list in S.No. 112 of Sixth Schedule</td></tr>
+  </table>
+
+  <div class="section-label">— Pesticides &amp; Agricultural Inputs (Table-1, large entry)</div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition</th></tr>
+    <tr><td><span class="item-name">Pesticides &amp; their active ingredients registered by Dept. of Plant Protection under Agricultural Pesticides Ordinance 1971; stabilizers, emulsifiers, solvents</span><div class="item-synonym">Herbicide, insecticide, fungicide, weedicide; active ingredients like Cypermethrin, Deltamethrin, Chlorpyrifos, Imidacloprid, Fipronil, Atrazine; xylol, toluene, methanol (as solvents)</div></td><td>Must be registered under Agricultural Pesticides Ordinance 1971</td></tr>
+  </table>
+
+  <div class="section-label">— Grants, Imports by Governments, Charities &amp; Special Zones</div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition</th></tr>
+    <tr><td><span class="item-name">Goods imported or supplied under grants-in-aid (with FBR consent); goods under pre-1996 government agreements</span></td><td>Specific FBR consent needed</td></tr>
+    <tr><td><span class="item-name">Goods imported by Gulf Sheikhdom rulers &amp; UAE dignitaries</span><div class="item-synonym">Household effects, vehicles — for personal use or donation to welfare projects</div></td><td>Conditions mirror customs zero-rating</td></tr>
+    <tr><td><span class="item-name">Goods imported by UN agencies, diplomats &amp; privileged organizations (effective 15 Jan 2022)</span></td><td>Subject to zero-rating of customs duty conditions</td></tr>
+    <tr><td><span class="item-name">Goods imported by or donated to hospitals run by non-profit institutions</span></td><td>S. 99.13 and 99.14 customs conditions apply</td></tr>
+    <tr><td><span class="item-name">Goods (excl. electricity &amp; gas) supplied to charitable hospitals of 50 beds or more</span></td><td></td></tr>
+    <tr><td><span class="item-name">Gwadar Free Zone supplies (Gwadar Port, COPHCL &amp; operating companies, contractors)</span><div class="item-synonym">Gwadar Free Zone businesses (23-year period)</div></td><td>Strict documentation conditions; only within Zone</td></tr>
+    <tr><td><span class="item-name">Special Technology Zone — imports of plant, machinery, equipment &amp; raw materials</span></td><td>For zone authority, developers &amp; enterprises</td></tr>
+    <tr><td><span class="item-name">Export Facilitation Scheme 2021 goods (raw materials, components, plant &amp; machinery)</span></td><td>For FBR-authorised registered exporters</td></tr>
+  </table>
+
+  <div class="section-label">Table-2: Pharmaceutical Raw Materials (DRAP-certified)</div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition</th></tr>
+    <tr><td><span class="item-name">Raw materials for manufacture of pharmaceutical products certified by DRAP</span><div class="item-synonym">Active pharmaceutical ingredients (APIs) raw materials — only items certified item-wise by Drug Regulatory Authority of Pakistan (DRAP); provided customs duty &gt; 11% ad valorem</div></td><td>DRAP must certify item-wise; information fed into Pakistan Customs Computerized System (PCCS). Note: APIs and pharma raw materials with customs duty ≤ 11% fall under 8th Schedule at 1% instead.</td></tr>
+  </table>
+
+  <div class="section-label">Table-3: Plant, Machinery &amp; Capital Goods (not locally manufactured)</div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Condition</th></tr>
+    <tr><td><span class="item-name">Plant, machinery, equipment &amp; apparatus (including capital goods) for manufacture, production, mining, agriculture, fisheries, animal husbandry, floriculture, horticulture, livestock, dairy &amp; poultry industries; also hotels, power plants, water treatment plants &amp; infrastructure near Gwadar (30km zone)</span><div class="item-synonym">Industrial machinery, factory equipment, agricultural machinery, power generators, research &amp; quality control instruments; Lahore Orange Line Metro Train equipment; refractory bricks, machine tools, packaging machinery, refrigeration equipment</div></td><td>Must NOT be listed in locally manufactured items (Customs General Order / Engineering Development Board certification). CEO certification to PCCS required. Imported goods only.</td></tr>
+  </table>
+
+  <div class="past-paper-box">
+    <strong>PAST PAPER — Winter 2024 (Q6 HPL)</strong>
+    (a) Raw materials certified by DRAP for medicine manufacture = 6th Schedule Table-2 exempt (if customs duty &gt;11%) or 8th Schedule 1% (if customs duty ≤11%). (b) Ginger in bulk packaging from PATA wholesaler — not branded — exempt under 6th Schedule. (c) Artificial limbs for private hospitals = 6th Schedule exempt (Table-1, S.No. 45). (d) APIs supplied to pharmaceutical company = 6th Schedule exempt if DRAP-certified.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- 8TH SCHEDULE -->
+<!-- ============================================================ -->
+<div class="schedule s8">
+  <div class="sch-header">
+    <span class="sch-number">8TH SCHEDULE</span>
+    <span class="sch-title">Reduced Rate Tax</span>
+  </div>
+  <div class="sch-hook">"Still taxable, but at a rate below 18%"</div>
+  <div class="law-ref">Section 3(2)(aa) · Tax base = value of supply (or retail price if also in 3rd Schedule)</div>
+
+  <div class="key-rule">
+    <strong>The Rule</strong>
+    Goods listed here are taxable but at special reduced rates ranging from 1% to 18%. The normal rules for tax invoicing, input tax (subject to conditions), and registration all apply. Many items carry special conditions — <em>always read column (5) of the Schedule</em>.
+  </div>
+
+  <div class="tricky">
+    <strong>CRITICAL — Input Tax on Agricultural Machinery (7%)</strong>
+    Under Section 8(1)(k), input tax on agricultural machinery purchased at 7% under the 8th Schedule is <strong>NOT allowed</strong> as an input tax credit.
+  </div>
+
+  <div class="tricky">
+    <strong>CRITICAL — Drugs/Medicines at 1%</strong>
+    Tax charged and deposited by the <strong>manufacturer or importer is final discharge</strong> in the supply chain. No further tax at wholesale or retail stage. No input tax adjustment allowed anywhere in the supply chain.
+  </div>
+
+  <table class="items-table">
+    <tr><th>Item</th><th>Also known as</th><th>Rate</th><th>Key Condition</th></tr>
+
+    <tr><td><span class="item-name">Second-hand &amp; worn clothing or footwear</span><div class="item-synonym">Used clothes (landa bazar), pre-owned garments, charity/used shoes</div></td><td></td><td><span class="rate-pill">5%</span></td><td class="condition-note">All second-hand</td></tr>
+
+    <tr><td><span class="item-name">Natural gas</span><div class="item-synonym">RLNG, LNG (regas), pipeline gas</div></td><td></td><td><span class="rate-pill">5%</span></td><td class="condition-note">Only if supplied to fertilizer plants as <strong>feedstock</strong> for fertilizer manufacturing <span class="exam-flag">EXAM</span></td></tr>
+
+    <tr><td><span class="item-name">Phosphoric acid (H₃PO₄)</span><div class="item-synonym">Ortho-phosphoric acid</div></td><td></td><td><span class="rate-pill">5%</span></td><td class="condition-note">Only if <strong>imported by fertilizer company</strong> for manufacturing DAP <span class="exam-flag">EXAM</span></td></tr>
+
+    <tr><td><span class="item-name">DAP (Di-Ammonium Phosphate)</span><div class="item-synonym">Diammonium phosphate fertilizer; double super phosphate</div></td><td></td><td><span class="rate-pill">5%</span></td><td class="condition-note">No refund of excess input tax</td></tr>
+
+    <tr><td><span class="item-name">Rock phosphate</span><div class="item-synonym">Phosphate rock, natural phosphate mineral</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note">Imported by fertilizer manufacturers for manufacturing fertilizers</td></tr>
+
+    <tr><td><span class="item-name">Oil cake and other solid residue</span><div class="item-synonym">Soya bean cake, canola meal, sunflower meal, cotton seed cake — animal feed raw material</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note"></td></tr>
+
+    <tr><td><span class="item-name">Locally produced coal</span><div class="item-synonym">Pakistani coal, mined coal (not imported)</div></td><td></td><td><span class="rate-pill">Rs.700/MT or 18% (higher)</span></td><td class="condition-note">Nil if exempt under other provision <span class="exam-flag">EXAM</span></td></tr>
+
+    <tr><td><span class="item-name">Potassium Chlorate (KClO₃)</span><div class="item-synonym">Oxidising agent used in match making, pyrotechnics</div></td><td></td><td><span class="rate-pill">18% + Rs.60/kg</span></td><td class="condition-note">Import and supply; Rs.60/kg does NOT apply to Ministry of Defence Production</td></tr>
+
+    <tr><td><span class="item-name">Goods supplied from FATA/PATA to taxable areas</span></td><td></td><td><span class="rate-pill">16%</span></td><td class="condition-note"></td></tr>
+
+    <tr><td><span class="item-name">Imported personal computers &amp; laptops</span><div class="item-synonym">Desktop PC, laptop, notebook, Chromebook (imported)</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note">Imported only; whether or not with multimedia kit</td></tr>
+
+    <tr><td><span class="item-name">Locally manufactured articles of jewellery of precious metal</span><div class="item-synonym">Gold jewellery, silver jewellery, platinum jewellery (local supply)</div></td><td></td><td><span class="rate-pill">3%</span></td><td class="condition-note">No input tax adjustment allowed</td></tr>
+
+    <tr><td colspan="4"><strong style="font-size:12px; color:var(--purple); font-family:var(--mono);">— ELECTRIC VEHICLES —</strong></td></tr>
+    <tr><td><span class="item-name">Locally manufactured electric vehicles</span><div class="item-synonym">Electric bus, electric truck, electric rickshaw, electric loader, electric motorcycle, electric prime mover</div></td><td></td><td><span class="rate-pill">1%</span></td><td class="condition-note">Local supply only; input tax limited to output tax (no carry forward/refund)</td></tr>
+    <tr><td><span class="item-name">Locally manufactured EVs (4-wheelers) till 30 June 2026</span><div class="item-synonym">Small EV cars/SUVs (≤50 kWh), LCVs (≤150 kWh)</div></td><td></td><td><span class="rate-pill">1%</span></td><td class="condition-note">Local supply; till 30 June 2026</td></tr>
+    <tr><td><span class="item-name">Hybrid electric vehicles</span><div class="item-synonym">Hybrid cars up to 1800cc; 1801-2500cc — till 30 June 2026</div></td><td></td><td><span class="rate-pill">8.5% / 12.75%</span></td><td class="condition-note">Locally manufactured or assembled; till 30 June 2026</td></tr>
+    <tr><td><span class="item-name">Electric vehicle (CBU, imported 4-wheeler)</span><div class="item-synonym">Imported full electric car (8703.8090)</div></td><td></td><td><span class="rate-pill">12.5%</span></td><td class="condition-note"></td></tr>
+    <tr><td><span class="item-name">EV transport buses (25 seats or more, CBU)</span></td><td></td><td><span class="rate-pill">1%</span></td><td class="condition-note"></td></tr>
+
+    <tr><td colspan="4"><strong style="font-size:12px; color:var(--purple); font-family:var(--mono);">— PHARMACEUTICALS —</strong></td></tr>
+    <tr><td><span class="item-name">Substances registered as drugs under Drugs Act 1976</span><div class="item-synonym">All medicines: tablets, capsules, syrups, injections, ointments, insulin, antibiotics, pain killers — registered drugs only</div></td><td></td><td><span class="rate-pill">1%</span></td><td class="condition-note">Tax at mfr/importer = FINAL. No input tax credit in chain <span class="exam-flag">EXAM</span></td></tr>
+    <tr><td><span class="item-name">Raw materials for basic manufacture of pharmaceutical active ingredients (APIs) &amp; pharmaceutical products</span><div class="item-synonym">API raw materials; pharma bulk drugs — customs duty ≤ 11% ad valorem</div></td><td></td><td><span class="rate-pill">1%</span></td><td class="condition-note">DRAP must certify item-wise; No input tax credit in chain <span class="exam-flag">EXAM</span></td></tr>
+
+    <tr><td colspan="4"><strong style="font-size:12px; color:var(--purple); font-family:var(--mono);">— STATIONERY (Added FA 2024) —</strong></td></tr>
+    <tr><td><span class="item-name">Stationery items</span><div class="item-synonym">Colour sets, writing/drawing/marking inks, erasers, pencil sharpeners, geometry box (drawing instruments), pens, ball pens, markers, felt-tip pens, pencils including colour pencils</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note"></td></tr>
+
+    <tr><td colspan="4"><strong style="font-size:12px; color:var(--purple); font-family:var(--mono);">— AGRICULTURE &amp; FOOD —</strong></td></tr>
+    <tr><td><span class="item-name">Tractors</span><div class="item-synonym">Farm tractor, agricultural tractor (Massey Ferguson, New Holland, Millat Tractor)</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note">Input tax NOT adjustable (Section 8(1)(k))</td></tr>
+    <tr><td><span class="item-name">Agricultural machinery or equipment</span><div class="item-synonym">Combine harvester, thresher, rotavator, tube-well pump, ploughs</div></td><td></td><td><span class="rate-pill">7%</span></td><td class="condition-note">Input tax NOT adjustable (Section 8(1)(k))</td></tr>
+    <tr><td><span class="item-name">Local supply of vermicelli, sheer mal, bun and rusk</span><div class="item-synonym">Seviyan (vermicelli), sheermal (sweet bread), bun, rusk — excluding those sold in bakeries</div></td><td></td><td><span class="rate-pill">10%</span></td><td class="condition-note">Not sold in bakeries; FA 2024 addition</td></tr>
+  </table>
+
+  <div class="past-paper-box">
+    <strong>PAST PAPER — Winter 2024 (Q6 HPL)</strong>
+    Insulin cartridges at Rs.500 retail price — insulin is a drug registered under the Drugs Act 1976 → 8th Schedule S.No. 81 at 1%. Tax = 1% × Rs.500 = Rs.5 per cartridge (final discharge; no further tax at distribution/retail). Raw materials for APIs with customs duty ≤ 11% → 8th Schedule S.No. 82 at 1% (not 6th Schedule). Turmeric sold under brand name by HPL → 3rd Schedule MRP basis (not exempt).
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- 11TH SCHEDULE -->
+<!-- ============================================================ -->
+<div class="schedule s11">
+  <div class="sch-header">
+    <span class="sch-number">11TH SCHEDULE</span>
+    <span class="sch-title">Sales Tax Withholding</span>
+  </div>
+  <div class="sch-hook">"The buyer deducts a portion of the tax and deposits it directly with FBR"</div>
+  <div class="law-ref">Section 3(7) &amp; 3(7A) · Inserted by Finance Act 2019</div>
+
+  <div class="key-rule">
+    <strong>The Rule</strong>
+    Designated withholding agents deduct sales tax (or a portion of it) from the payment to suppliers and deposit it with the government. The supplier still issues a full tax invoice. The buyer deducts the amount as specified and pays the balance to the supplier.
+  </div>
+
+  <div class="tricky">
+    <strong>IMPORTANT — Withholding does NOT apply to</strong>
+    Electrical energy; natural gas; petroleum products (from exploration companies, refineries, OMCs, dealers of motor spirit/HSD); vegetable ghee &amp; cooking oil; telecom services; 3rd Schedule MRP goods; supplies by importers who already paid value addition tax at import; supplies by an Active Taxpayer to another registered person (with exceptions for S.Nos. 5, 7, 9, 10, 11, 12, 13).
+  </div>
+
+  <div class="section-label">Part A — Standard Withholding (Government Departments &amp; Companies)</div>
+
+  <table class="items-table">
+    <tr><th>Withholding Agent</th><th>Supplier Category</th><th>Rate</th></tr>
+    <tr>
+      <td><span class="item-name">Federal &amp; provincial govt departments, autonomous bodies, public sector organisations (PSOs)</span><div class="item-synonym">WAPDA, PESCO, HESCO, SNGPL, SSGC, PTCL, NADRA, PIA, Pakistan Railways, OGDC, PSO, PARCO, NHA, and all government departments</div></td>
+      <td>Active Taxpayer (regular registered persons)</td>
+      <td><span class="rate-pill">1/5th of tax on invoice</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Same as above (Govt depts, PSOs)</span></td>
+      <td>Active Taxpayer registered as wholesaler, dealer or distributor</td>
+      <td><span class="rate-pill">1/10th of tax on invoice</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Companies as defined in Income Tax Ordinance 2001</span><div class="item-synonym">Private limited company, public company, listed company, multinational company — EXCLUDING companies exporting surgical instruments</div></td>
+      <td>Active Taxpayer (regular)</td>
+      <td><span class="rate-pill">1/5th of tax on invoice</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Companies (as above)</span></td>
+      <td>Active Taxpayer wholesaler/dealer/distributor</td>
+      <td><span class="rate-pill">1/10th of tax on invoice</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Federal &amp; provincial govt depts, autonomous bodies, PSOs</span></td>
+      <td>Persons OTHER THAN Active Taxpayers (inactive/unregistered)</td>
+      <td><span class="rate-pill">Whole tax (100%)</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Companies (excl. surgical instrument exporters)</span></td>
+      <td>Persons OTHER THAN Active Taxpayers</td>
+      <td><span class="rate-pill">5% of gross value</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Registered persons receiving advertisement services</span><div class="item-synonym">Any company or registered firm buying advertising (TV ads, billboard, digital ads, radio)</div></td>
+      <td>Person providing advertisement services</td>
+      <td><span class="rate-pill">Whole tax (100%)</span></td>
+    </tr>
+    <tr>
+      <td><span class="item-name">Registered persons purchasing cane molasses</span><div class="item-synonym">Sugar mills buying molasses, distilleries purchasing molasses</div></td>
+      <td>Persons other than Active Taxpayers</td>
+      <td><span class="rate-pill">Whole tax (100%)</span></td>
+    </tr>
+  </table>
+
+  <div class="section-label">Part B — Special 80% Withholding (Industrial Inputs)</div>
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1569585723035-0e24a03c0451?w=200&q=80" alt="coal"><span>Coal</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1548142813-c348350df52b?w=200&q=80" alt="lead battery"><span>Lead/Batteries</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=200&q=80" alt="gypsum"><span>Gypsum</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80" alt="scrap"><span>Scrap/Waste</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d6e?w=200&q=80" alt="crush stone"><span>Crush Stone</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>Withholding Agent (Buyer)</th><th>Supplier / Goods</th><th>Rate</th></tr>
+    <tr>
+      <td>Registered persons manufacturing <strong>lead batteries</strong></td>
+      <td>Persons supplying lead (Chapter 78) or scrap batteries (Chapter 85)</td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+    <tr>
+      <td>Registered persons (any)</td>
+      <td>Persons supplying any kind of <strong>coal</strong> (Chapter 27 — PCT 2701, 2704)</td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+    <tr>
+      <td>Registered persons (any)</td>
+      <td>Persons supplying <strong>waste of paper and paperboard</strong></td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+    <tr>
+      <td>Registered persons (any)</td>
+      <td>Persons supplying any kind of <strong>plastic waste</strong></td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+    <tr>
+      <td>Registered persons manufacturing <strong>cement</strong></td>
+      <td>Persons supplying <strong>gypsum</strong> (PCT 2520) or <strong>limestone flux</strong> (PCT 2521)</td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+    <tr>
+      <td>Registered persons (any)</td>
+      <td>Persons supplying <strong>crush stone and silica</strong></td>
+      <td><span class="rate-pill">80% of tax</span></td>
+    </tr>
+  </table>
+
+  <div class="section-label">Part C — Digital Commerce Withholding</div>
+
+  <table class="items-table">
+    <tr><th>Withholding Agent</th><th>Supplier</th><th>Rate</th></tr>
+    <tr>
+      <td><span class="item-name">Payment intermediaries and couriers in respect of digitally ordered goods</span><div class="item-synonym">Daraz, Telemart, OLX, payment gateways (JazzCash, Easypaisa, banks), courier companies (TCS, Leopards, M&amp;P) for digital orders</div></td>
+      <td>Persons supplying goods digitally ordered from within Pakistan through online marketplace, website, mobile app</td>
+      <td><span class="rate-pill">2% of gross value</span></td>
+    </tr>
+  </table>
+
+  <div class="tricky">
+    <strong>QUICK SUMMARY TABLE</strong>
+    Govt → Active Taxpayer: 1/5th | Govt → Active Wholesaler: 1/10th | Govt → Non-Active: 100% | Company → Active: 1/5th | Company → Active Wholesaler: 1/10th | Company → Non-Active: 5% of gross | Ad services: 100% | Coal/lead/gypsum etc: 80% | Digital orders: 2%
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- 12TH SCHEDULE -->
+<!-- ============================================================ -->
+<div class="schedule s12">
+  <div class="sch-header">
+    <span class="sch-number">12TH SCHEDULE</span>
+    <span class="sch-title">Value Addition Tax at Import (3%)</span>
+  </div>
+  <div class="sch-hook">"An extra 3% charged at the customs stage on top of normal 18% — minimum value addition presumed"</div>
+  <div class="law-ref">Section 7A(2) · Inserted by Finance Act 2019 · Also called "minimum value addition tax" or "VAT at import"</div>
+
+  <div class="key-rule">
+    <strong>The Rule</strong>
+    ALL taxable imported goods are subject to an additional 3% ad valorem at the import stage, over and above the normal sales tax rate. This is charged IN ADDITION to the regular sales tax (not instead of it). Purpose: to collect tax equivalent to the value addition that importers typically make before selling.
+  </div>
+
+  <div class="tricky">
+    <strong>EXAM FOCUS — Learn the EXCLUSIONS (these come in exams)</strong>
+    The 12th Schedule 3% does NOT apply to the goods listed below. If any of these appear in an exam scenario involving imports, do NOT add the 3%.
+  </div>
+
+  <div class="section-label">Items Excluded from the 3% VAT</div>
+
+  <div class="img-grid">
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200&q=80" alt="raw materials"><span>Raw Materials</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1625772452859-1c03d884dcd7?w=200&q=80" alt="LNG"><span>LNG/RLNG</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&q=80" alt="petroleum"><span>Petroleum (OMCs)</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&q=80" alt="mobile phones"><span>Mobile Phones</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=200&q=80" alt="gold"><span>Gold/Silver</span></div>
+    <div class="img-card"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=200&q=80" alt="machinery"><span>Machinery</span></div>
+  </div>
+
+  <table class="items-table">
+    <tr><th>#</th><th>Excluded Item</th><th>Notes / Examples</th></tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(i)</td>
+      <td><span class="item-name">Raw materials and intermediary goods imported by a manufacturer for in-house consumption</span><div class="item-synonym">Chemicals, fibres, metals, polymers used directly in production — imported by the factory that uses them</div></td>
+      <td class="condition-note">Excluding: compressor scrap (PCT 7204.4940), motor scrap (7204.4990), copper cable cutting scrap (7404.0090) — these ARE subject to 3% <span class="exam-flag">EXAM</span></td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(ii)</td>
+      <td><span class="item-name">Petroleum products (Chapter 27) imported by a licensed Oil Marketing Company (OMC)</span><div class="item-synonym">Motor spirit (petrol/gasoline), HSD (diesel), furnace oil, kerosene — imported by PSO, Shell, Total, Attock, Caltex</div></td>
+      <td class="condition-note">Must be a licensed OMC; for sale in the country</td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(iii)</td>
+      <td><span class="item-name">Registered service providers importing goods for in-house business use (not for further supply)</span><div class="item-synonym">A telecoms company importing network equipment for its own use; a hospital importing medical equipment for own use</div></td>
+      <td class="condition-note">NOT intended for further supply</td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(iv)</td>
+      <td><span class="item-name">Cellular mobile phones and satellite phones</span><div class="item-synonym">Smartphones, feature phones, satellite handsets (taxed separately under 9th Schedule)</div></td>
+      <td class="condition-note">PCT 8517.1419, 8517.1430, 8517.1390</td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(v)</td>
+      <td><span class="item-name">LNG / RLNG</span><div class="item-synonym">Liquefied natural gas, re-gasified LNG</div></td>
+      <td class="condition-note">Energy; imported for supply to industry &amp; homes</td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(vi)</td>
+      <td><span class="item-name">Second-hand and worn clothing or footwear</span><div class="item-synonym">Used clothes bales (landa), second-hand shoes</div></td>
+      <td class="condition-note">PCT 6309.0000; already taxed at 5% (8th Schedule)</td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(vii)&amp;(viii)</td>
+      <td><span class="item-name">Gold in un-worked condition; Silver in un-worked condition</span><div class="item-synonym">Gold bars, gold ingots, silver bars, silver coins — unprocessed form</div></td>
+      <td class="condition-note"></td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(ix)</td>
+      <td><span class="item-name">Goods specified in the Third Schedule on which tax is paid on retail price basis</span><div class="item-synonym">Imported MRP goods — e.g. imported aerated drinks, imported cosmetics, imported motorcycles already carrying MRP stamp</div></td>
+      <td class="condition-note">These already pay 18% on MRP; adding another 3% on customs value would double-tax them <span class="exam-flag">EXAM</span></td>
+    </tr>
+    <tr>
+      <td style="font-family:var(--mono);font-size:11px;color:#888">(x)</td>
+      <td><span class="item-name">Plant, machinery and equipment (Chapters 84 &amp; 85 of PCT) imported by a manufacturer for in-house installation or use</span><div class="item-synonym">Industrial machines, electrical machinery, generators, industrial boilers, compressors — imported by the factory that will use them</div></td>
+      <td class="condition-note">Must be FOR OWN use, not for trading/resale</td>
+    </tr>
+  </table>
+
+  <div class="tricky">
+    <strong>QUICK EXAM DECISION TREE</strong>
+    Is the importer a MANUFACTURER importing for own use? → Excluded (i) or (x). Is it an OMC? → Excluded (ii). Is it LNG? → (v). Mobile phone? → (iv). Gold/silver unworked? → (vii)/(viii). 3rd Schedule MRP item? → (ix). Everything else taxable at import → 18% normal + 3% VAT.
+  </div>
+</div>
+
+<hr class="divider">
+
+<div style="text-align:center; font-family: var(--mono); font-size: 11px; color: #888; padding: 20px 0;">
+  Sales Tax Act, 1990 (Updated to 2025-26) · CFAP-5 Study Notes · All items verified from statute
+</div>
+
+</body>
+</html>
